@@ -1,0 +1,7 @@
+-----BEGIN OPENSSH PRIVATE KEY-----
+Aqui va el contenido de tu clave privada sin passphrase, aunque no va a funcionar con nuestro repositorio, podque tendríamos que darte permiso. Sin embargo, podrías crear un fork de nuestro repositorio y utilizarlo sin problemas.
+
+Para crear una clave privada sin passphrase, usa el siguiente comando:
+
+ssh-keygen -t rsa -C <tu-correo> -N ""
+-----END OPENSSH PRIVATE KEY-----
