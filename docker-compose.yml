@@ -12,8 +12,8 @@ services:
       # este directorio tiene una serie de ficheros a los que no hay que cambiar el nombre, usados para permitirnos subir los cambios aplicados en el repositorio local al de GitHub
       - ./contenido-ssh:/contenido-ssh
       # tienes que editar esta línea en caso de que tu socket no se encuentre en la ruta genérica indicada por nosotros
-      #- /var/run/docker.sock:/var/run/docker.sock:ro
-      - /run/user/1000/docker.sock:/var/run/docker.sock:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      
     environment:
        - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins-casc/jenkins-casc.yml
        #- JENKINS_NOMBRE_ADMINISTRADOR=nombre-administrador
