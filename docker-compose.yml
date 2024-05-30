@@ -1,7 +1,7 @@
 # un Jenkins configurado automáticamente con dos Pipelines para testear el proyecto de Powershell
 services:
   servidor-jenkins:
-    image: tfg2asircanaveral2024/jenkins:base-jcasc-pwsh
+    image: tfg2asircanaveral2024/jenkins:base-jcasc-docker-cli
     ports:
       - 8080:8080
     # el usuario tiene que ser root, en parte porque, aunque el problema de PSDepend está solucionado al ejecutarse Powershell en contenedores, los permisos de los ficheros para SSH siguen siendo conflictivos 
@@ -11,6 +11,9 @@ services:
       - ./jenkins-casc:/var/jenkins_home/jenkins-casc
       # este directorio tiene una serie de ficheros a los que no hay que cambiar el nombre, usados para permitirnos subir los cambios aplicados en el repositorio local al de GitHub
       - ./contenido-ssh:/contenido-ssh
+      # tienes que editar esta línea en caso de que tu socket no se encuentre en la ruta genérica indicada por nosotros
+      #- /var/run/docker.sock:/var/run/docker.sock:ro
+      - /run/user/1000/docker.sock:/var/run/docker.sock:ro
     environment:
        - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins-casc/jenkins-casc.yml
        #- JENKINS_NOMBRE_ADMINISTRADOR=nombre-administrador
