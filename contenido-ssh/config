@@ -1,2 +1,2 @@
 Host git@github.com
-    IdentityFile $HOME/.ssh/clave-github
+    IdentityFile ~/.ssh/clave-github
