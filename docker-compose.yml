@@ -14,6 +14,8 @@ services:
       # tienes que editar esta línea en caso de que tu socket no se encuentre en la ruta genérica indicada por nosotros
       #- /var/run/docker.sock:/var/run/docker.sock:ro
       - /run/user/1000/docker.sock:/var/run/docker.sock:ro
+      # esta ruta es opcional, pero en muchas situaciones acabará siendo requerido
+      - /var/jenkins_home/:/var/jenkins_home/
     environment:
        - CASC_JENKINS_CONFIG=/var/jenkins_home/jenkins-casc/jenkins-casc.yml
        #- JENKINS_NOMBRE_ADMINISTRADOR=nombre-administrador
